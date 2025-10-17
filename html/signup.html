@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LitVerse — Sign Up</title>
+<link href="https://fonts.googleapis.com/css2?family=Purple+Purse&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<header>
+    <div class="nav-container">
+        <img src="../img/logo.png" alt="logo-title" class="nav-logo">
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <label for="nav-toggle" class="nav-toggle-label">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <div class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="books.html">All Books</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="request.html">request</a>
+            <a href="login.html">Log In</a>
+            <a href="signup.html">Sign Up</a>
+        </div>
+    </div>
+</header>
+
+<main>
+<div class="container-signup">
+<img class="img-sign" src="../img/log-sign.jpg" alt="Signup Image">
+<h1>Sign Up</h1>
+<form>
+<div class="form-row">
+<div>
+<label>First Name :</label>
+<input type="text" required>
+</div>
+<div>
+<label>Family Name :</label>
+<input type="text" required>
+</div>
+</div>
+
+<div>
+<label>Email :</label>
+<input type="email" required>
+</div>
+
+<div>
+<label>Password :</label>
+<input type="password" required>
+</div>
+
+<div>
+<label>Repeat Password :</label>
+<input type="password" required>
+</div>
+
+<div class="date-row">
+<input type="number" placeholder="DD" min="1" max="31" required>
+<input type="number" placeholder="MM" min="1" max="12" required>
+<input type="number" placeholder="YYYY" min="1900" max="2025" required>
+</div>
+
+<div class="gender">
+<label><input type="radio" name="gender"> Male</label>
+<label><input type="radio" name="gender"> Female</label>
+</div>
+
+<input type="button" value="Sign Up">
+<p class="login-link">Already have an account? <a href="login.html">Log In</a></p>
+</form>
+</div>
+</main>
+
+<footer>
+<img src="../img/logo.png" alt="LitVerse Logo">
+<p>© 2025 Youcode | Designed With Passion For Readers Everywhere | Designed By MOEUAED</p>
+</footer>
+</body>
+</html>

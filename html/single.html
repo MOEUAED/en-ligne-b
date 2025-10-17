@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LitVerse</title>
+  <link href="https://fonts.googleapis.com/css2?family=Purple+Purse&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lily+Script+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Charmonman:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #1f1f1f;
+        font-family: "Georgia", serif;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      header {
+        background-color: #333;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        padding: 10px 0;
+      }
+
+      nav.container-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
+        margin: 0 auto;
+        position: relative;
+      }
+
+      nav img.nav-logo {
+        width: 180px;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 15px;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: #febb0b;
+        font-weight: bold;
+      }
+
+      .nav-toggle {
+        display: none;
+      }
+
+      .nav-toggle-label {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
+      }
+
+      .nav-toggle-label span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background: #febb0b;
+      }
+
+      @media (max-width: 768px) {
+        .nav-toggle-label {
+          display: flex;
+        }
+        .nav-links {
+          position: absolute;
+          top: 60px;
+          right: 0;
+          background-color: #333;
+          flex-direction: column;
+          width: 100%;
+          display: none;
+          z-index: 1000;
+        }
+        .nav-links a {
+          padding: 10px 0;
+          border-top: 1px solid #444;
+        }
+        .nav-toggle:checked + .nav-toggle-label + .nav-links {
+          display: flex;
+        }
+      }
+    main {
+      width: 95%;
+      max-width: 1200px;
+      margin: 20px auto;
+    }
+
+    h1.landing-title {
+      font-family: 'Purple Purse', cursive;
+      color: #FEBB0B;
+      font-size: 2em;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    input[type="search"] {
+      background-color: #4B4C4B;
+      padding: 10px 15px;
+      width: 80%;
+      max-width: 400px;
+      border-radius: 20px;
+      border: 0.1px solid white;
+      font-size: 1em;
+      text-align: left;
+      background: url('img/search.png') no-repeat right 10px center;
+      background-size: 30px 30px;
+      color: white;
+      margin: 20px auto;
+      display: block;
+    }
+
+    input::placeholder {
+      font-family: 'Lily Script One', cursive;
+      color: #D4D4D4;
+      font-size: 1em;
+    }
+
+    .landing-card {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 20px;
+      background-color: #2a2a2a;
+      border-radius: 10px;
+      padding: 15px;
+      margin: 20px auto;
+      max-width: 1000px;
+    }
+
+    .landing-card img {
+      width: 300px;
+      height: 350px;
+      border-radius: 5px;
+      object-fit: cover;
+    }
+
+    .landing-card div {
+      flex: 1;
+      color: #d4d4d4;
+      text-align: left;
+    }
+
+    .landing-card h1 {
+      color: #FEBB0B;
+      font-family: 'Purple Purse', cursive;
+      margin-bottom: 10px;
+    }
+
+    .landing-card h5 {
+      color: #DEA331;
+      margin: 5px 0;
+    }
+
+    .landing-card p {
+      line-height: 1.6em;
+      font-size: 0.95em;
+      margin-top: 10px;
+    }
+
+    .suggest {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+      margin: 40px auto;
+    }
+
+    .suggest a img {
+      width: 220px;
+      height: 320px;
+      border-radius: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .suggest a img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 20px rgba(255, 187, 11, 0.3);
+    }
+
+    @media screen and (max-width: 900px) {
+      .landing-card {
+        flex-direction: column;
+      }
+      .landing-card img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+      }
+      input[type="search"] {
+        width: 90%;
+      }
+    }
+      footer {
+        background-color: rgba(210, 210, 210, 0.1);
+        padding: 15px 0;
+        text-align: center;
+      }
+
+      footer img {
+        height: 35px;
+        width: 150px;
+        margin-bottom: 10px;
+      }
+
+      footer p {
+        color: #a48d4b;
+        font-size: 0.9em;
+      } 
+  </style>
+</head>
+<body>
+    <header>
+      <nav class="container-nav">
+        <img src="../img/logo.png" alt="logo" class="nav-logo" />
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+        <label for="nav-toggle" class="nav-toggle-label">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <div class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="books.html">All Books</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="request.html">request</a>
+            <a href="login.html">Log In</a>
+            <a href="signup.html">Sign Up</a>
+        </div>
+      </nav>
+    </header>
+
+
+  <main>
+    <h1 class="landing-title">In the universe of LitVerse,<br>every word shines with meaning.</h1>
+    <input type="search" placeholder="Search Book by Name or Author">
+
+    <div class="landing-card">
+      <img src="../img/thewicked.png" alt="">
+      <div>
+        <h1>THE SHINING</h1>
+        <h5>Stephen King</h5>
+        <h5>* 1977 *</h5>
+        <h5>Horror / Thriller</h5>
+        <p>
+          “The Shining” is a psychological horror masterpiece that tells the story of Jack Torrance, a struggling writer who becomes the winter caretaker of the isolated Overlook Hotel in the Colorado mountains. He moves there with his wife Wendy and their young son Danny, who possesses psychic abilities known as “the shining.”
+        </p>
+      </div>
+    </div>
+
+    <div class="landing-card">
+      <div>
+        <h1>Stephen King</h1>
+        <h5>Portland</h5>
+        <h5>* 1947 *</h5>
+        <p>
+          Stephen King is one of the most prolific and celebrated authors of modern times. He has written more than 60 novels and over 200 short stories. Many of his stories have been adapted into movies, TV series, and miniseries, making him a household name.
+        </p>
+      </div>
+      <img src="../img/Stephen_King.jpg" alt="">
+    </div>
+
+    <h2 style="color:#FEBB0B; margin-top:40px; text-align: center;">LitVerse Picks</h2>
+    <div class="suggest">
+      <a href=""><img src="../img/harrypotter.png" alt=""></a>
+      <a href=""><img src="../img/TheEvilDead.png" alt=""></a>
+      <a href=""><img src="../img/TheShining.jpg" alt=""></a>
+    </div>
+  </main>
+
+    <footer>
+      <img src="../img/logo.png" alt="" />
+      <p>
+        © 2025 Youcode | Designed With Passion For Readers Everywhere | Designed
+        By MOEUAED
+      </p>
+    </footer>
+</body>
+</html>

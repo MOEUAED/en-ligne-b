@@ -1,0 +1,760 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1f1f1f;
+    font-family: "Georgia", serif;
+    color: white;
+    text-align: center;
+}
+
+header {
+    background: #333;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+    padding: 10px 0;
+}
+
+.nav-logo {
+    width: 180px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #febb0b;
+    font-weight: bold;
+}
+
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.nav-toggle-label span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #febb0b;
+}
+
+@media (max-width: 768px) {
+    .nav-toggle-label {
+        display: flex;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #333;
+        flex-direction: column;
+        width: 100%;
+        display: none;
+        z-index: 1000;
+    }
+
+    .nav-links a {
+        padding: 10px 0;
+        border-top: 1px solid #444;
+    }
+
+    .nav-toggle:checked+.nav-toggle-label+.nav-links {
+        display: flex;
+    }
+}
+
+
+h1 {
+    color: #febb0b;
+    font-size: 1.9em;
+    line-height: 1.4em;
+    margin-bottom: 20px;
+    font-family: "Purple Purse", cursive;
+}
+
+input[type="search"] {
+    background-color: #4b4c4b;
+    padding: 10px;
+    width: 25%;
+    border-radius: 20px;
+    border: 0.1px solid white;
+    font-size: 1em;
+    text-align: left;
+    background: url("img/search.png") no-repeat right 10px center;
+    background-size: 30px 30px;
+    color: white;
+}
+
+input::placeholder {
+    font-family: "Lily Script One", cursive;
+    color: #d4d4d4;
+    font-size: 1em;
+}
+
+h3 {
+    font-family: "Charmonman", cursive;
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: 1.4em;
+    text-align: left;
+}
+
+.book-section {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.book-card {
+    position: relative;
+    width: 220px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.book-card img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.book-card:hover img {
+    transform: scale(1.08);
+    filter: brightness(40%);
+}
+
+.book-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(20, 20, 20, 0.7);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.book-card:hover .book-info {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.book-info h4 {
+    font-size: 1.1em;
+    color: #febb0b;
+    margin-bottom: 5px;
+}
+
+.book-info p {
+    font-size: 0.9em;
+    margin: 0;
+}
+
+.book-info small {
+    font-size: 0.8em;
+    color: #ccc;
+}
+
+a.explore-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid #d1d1d1;
+    border-radius: 5px;
+    color: #d1d1d1;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 40px 0;
+    transition: background 0.3s, color 0.3s;
+}
+
+a.explore-btn:hover {
+    background-color: #febb0b;
+    color: #1f1f1f;
+}
+
+.landing-card {
+    background-color: #f7f3e8;
+    color: #333;
+    width: 80%;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-radius: 10px;
+}
+
+.landing-card img {
+    width: 300px;
+    height: 350px;
+    border-radius: 5px;
+}
+
+.landing-card h1 {
+    color: #000;
+    font-size: 1.5em;
+}
+
+.landing-card h5 {
+    color: #dea331;
+    margin: 3px 0;
+}
+
+.landing-card p {
+    color: #222;
+    line-height: 1.6em;
+    font-size: 0.95em;
+}
+
+.info {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+footer {
+    background-color: rgba(210, 210, 210, 0.1);
+    padding: 15px 0;
+    text-align: center;
+}
+
+footer img {
+    height: 35px;
+    width: 150px;
+    margin-bottom: 10px;
+}
+
+footer p {
+    color: #a48d4b;
+    font-size: 0.9em;
+}
+
+/* ✅ Responsive Design */
+@media (max-width: 992px) {
+    .landing-card {
+        flex-direction: column;
+        width: 95%;
+    }
+
+    .landing-card img {
+        width: 90%;
+        height: auto;
+    }
+
+    input[type="search"] {
+        width: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .book-card {
+        width: 45%;
+        height: auto;
+    }
+
+    .book-card img {
+        height: auto;
+    }
+
+    input[type="search"] {
+        width: 70%;
+    }
+
+    .landing-card {
+        flex-direction: column;
+        width: 90%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .book-card {
+        width: 90%;
+        height: auto;
+    }
+
+    h1 {
+        font-size: 1.4em;
+    }
+
+    h3 {
+        text-align: center;
+    }
+
+    input[type="search"] {
+        width: 85%;
+    }
+
+    .landing-card {
+        width: 95%;
+    }
+
+    .landing-card img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+
+.container-login {
+    margin: 50px auto;
+    max-width: 500px;
+    border: 1px solid #a48d4b;
+    background: #d4d4d4;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.img-login {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+h1 {
+    color: #1f1f1f;
+    text-align: center;
+    margin: 15px 0;
+}
+
+form {
+    padding: 2em;
+    text-align: left;
+    color: #333;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #aaa;
+    margin-bottom: 15px;
+}
+
+input[type="button"] {
+    width: 100%;
+    background: #a48d4b;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+input[type="button"]:hover {
+    background: #febb0b;
+    color: #1f1f1f;
+}
+
+p.signup-link {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.95em;
+}
+
+a {
+    color: #1f1f1f;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.container-signup {
+    margin: 30px auto;
+    max-width: 700px;
+    border: 1px solid #A48D4B;
+    background: #d4d4d4;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.img-sign {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+h1 {
+    color: #1f1f1f;
+    text-align: center;
+    margin: 15px 0;
+}
+
+form {
+    padding: 2em;
+    text-align: left;
+    color: #333;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.form-row div {
+    flex: 1;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type=text],
+input[type=email],
+input[type=password],
+input[type=number] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #aaa;
+    margin-bottom: 10px;
+}
+
+.date-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.date-row input {
+    flex: 1;
+}
+
+.gender {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+input[type=button] {
+    width: 100%;
+    background: #A48D4B;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+input[type=button]:hover {
+    background: #FEBB0B;
+    color: #1f1f1f;
+}
+
+p.login-link {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.95em;
+}
+
+a {
+    color: #1f1f1f;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.container-form {
+    margin: 30px auto;
+    max-width: 600px;
+    border: 1px solid #A48D4B;
+    background: #d4d4d4;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.img-form {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+h1 {
+    text-align: center;
+    color: #1f1f1f;
+    margin: 15px 0;
+    font-family: 'Purple Purse', cursive;
+}
+
+form {
+    padding: 2em;
+    color: #333;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type=text],
+input[type=email],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid #aaa;
+}
+
+textarea {
+    resize: none;
+    height: 120px;
+}
+
+input[type=submit] {
+    width: 100%;
+    padding: 10px;
+    background: #A48D4B;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background: #FEBB0B;
+    color: #1f1f1f;
+}
+
+
+main {
+    width: 90%;
+    margin: 20px auto;
+}
+
+h1 {
+    color: #febb0b;
+    font-size: 2em;
+    line-height: 1.4em;
+    margin-bottom: 20px;
+    font-family: "Purple Purse", cursive;
+}
+
+.big-title {
+    color: #febb0b;
+}
+
+input[type="search"] {
+    background-color: #4b4c4b;
+    padding: 10px;
+    border-radius: 20px;
+    border: 0.1px solid white;
+    width: 50%;
+    max-width: 400px;
+    font-size: 1em;
+    text-align: left;
+    background: url("../img/search.png") no-repeat right 10px center;
+    background-size: 30px 30px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+input::placeholder {
+    font-family: "Lily Script One", cursive;
+    color: #d4d4d4;
+    font-size: 1em;
+}
+
+
+.books-h3 {
+    font-family: "Charmonman", cursive;
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: 2em;
+    text-align: left;
+}
+
+.books {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    justify-items: center;
+}
+
+.books img {
+    width: 220px;
+    height: 300px;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.books img:hover {
+    transform: scale(1.05);
+}
+
+.books h4 {
+    margin-top: 5px;
+    font-size: 1.1em;
+    color: #febb0b;
+}
+
+.books p {
+    font-size: 0.9em;
+    color: #ccc;
+}
+
+@media (max-width: 1024px) {
+    input[type="search"] {
+        width: 60%;
+    }
+
+    .books img {
+        width: 180px;
+        height: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.6em;
+    }
+
+    input[type="search"] {
+        width: 70%;
+    }
+
+    .books img {
+        width: 160px;
+        height: 220px;
+    }
+
+    .books-h3 {
+        text-align: center;
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.4em;
+    }
+
+    input[type="search"] {
+        width: 90%;
+    }
+
+    .books img {
+        width: 140px;
+        height: 200px;
+    }
+
+    .books-h3 {
+        text-align: center;
+        font-size: 1.3em;
+    }
+}
+
+
+.container-form {
+    margin: 30px auto;
+    max-width: 600px;
+    border: 1px solid #a48d4b;
+    background: #d4d4d4;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.img-form {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+h1 {
+    text-align: center;
+    color: #1f1f1f;
+    margin: 15px 0;
+    font-family: "Purple Purse", cursive;
+}
+
+form {
+    padding: 2em;
+    color: #333;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid #aaa;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background: #a48d4b;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background: #febb0b;
+    color: #1f1f1f;
+}
